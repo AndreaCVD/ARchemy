@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class VRInstancer : MonoBehaviour
@@ -7,6 +8,14 @@ public class VRInstancer : MonoBehaviour
     [SerializeField] float delay = 2.0f; // Segundos entre instancias
     private bool planeDetected = false; //Si detecta plano o no
     private Vector3 planePosition; //Como esta el plano
+
+    [Tooltip("The list of prefabs available to spawn.")]
+    List<GameObject> m_ObjectPrefabs = new List<GameObject>();
+    public List<GameObject> objectPrefabs
+    {
+        get => m_ObjectPrefabs;
+        set => m_ObjectPrefabs = value;
+    }
 
     void Start()
     {
@@ -27,8 +36,7 @@ public class VRInstancer : MonoBehaviour
     }
 
 
-
-    
+        
     void Update() 
     {
         PlaneDetection();
@@ -49,7 +57,7 @@ public class VRInstancer : MonoBehaviour
         Ray ray = new Ray(transform.position, Vector3.down);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            if (hit.collider.CompareTag("Plano"))
+            if (hit.collider.CompareTag("XR Simulation"))
             {
                 planeDetected = true;
                 //if (corutinaInstanciado == null)
