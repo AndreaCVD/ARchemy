@@ -17,10 +17,6 @@ public class VRInstancer : MonoBehaviour
     //    set => m_ObjectPrefabs = value;
     //}
 
-    void Start()
-    {
-
-    }
 
     public void Instance() //Instanciar
     {

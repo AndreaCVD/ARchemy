@@ -11,14 +11,15 @@ public class DetectPlane : MonoBehaviour
     [SerializeField] GameObject prefabObj;
     //[SerializeField] private ARRaycastManager raycastManager;
     //[SerializeField] private GameObject prefabObj;
-    private List<ARPlane> detectedPlanes = new List<ARPlane>();
+    public List<ARPlane> detectedPlanes = new List<ARPlane>();
     public bool planeDetected;
 
     void Update()
     {
-        if(planeDetected)
+        if(detectedPlanes != null) //si la lista no esta vacia es que detecta planos
         {
-            InvokeRepeating("Instance()", 3.0f, 3.0f);
+            //InvokeRepeating("Instance()", 3.0f, 3.0f);
+            Debug.Log("--PLANO--: " + detectedPlanes[0].planeId );
         }
 
     }
@@ -66,15 +67,13 @@ public class DetectPlane : MonoBehaviour
         foreach (var plane in args.added)
         {
             detectedPlanes.Add(plane);
-            planeDetected = true;
             // Debug.Log("Plano detectado:" + plane.planeId+" en posición"+ plane.center);
-            Debug.Log("Plano detectado:" + plane);
+            Debug.Log("Plano detectado: " + plane);
         }
 
         foreach (var plane in args.removed)
         {
             detectedPlanes.Remove(plane);
-            planeDetected = false;
             //intanciar.StopInstance();
             Debug.Log("Plano eliminado:" + plane);
         }
@@ -89,4 +88,12 @@ public class DetectPlane : MonoBehaviour
         // Opcional: Hacer que el objeto sea hijo de un objeto vacío para organizar la jerarquía
         //nuevoObjeto.transform.SetParent(transform);
     }
+
+//    // Ejemplo correcto para obtener un TrackableId válido:
+//    List<ARRaycastHit> _hits = new List<ARRaycastHit>();
+//if (_raycastManager.Raycast(screenCenter, _hits, TrackableType.PlaneWithinPolygon))
+//{
+//    TrackableId _planeID = _hits.trackableId; // Ahora será válido
+//    ARPlane _arPlane = _arPlaneManager.GetPlane(_planeID);
+//}
 }
