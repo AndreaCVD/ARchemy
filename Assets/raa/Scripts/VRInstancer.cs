@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class VRInstancer : MonoBehaviour
@@ -8,54 +9,73 @@ public class VRInstancer : MonoBehaviour
     private bool planeDetected = false; //Si detecta plano o no
     private Vector3 planePosition; //Como esta el plano
 
-    void Start()
+    [Tooltip("The list of prefabs available to spawn.")]
+    List<GameObject> m_ObjectPrefabs = new List<GameObject>();
+    public List<GameObject> objectPrefabs
     {
-        // Iniciar el coroutine que instancia objetos cada intervalo
-        StartCoroutine(Instance());
+        get => m_ObjectPrefabs;
+        set => m_ObjectPrefabs = value;
     }
 
-    private IEnumerator Instance()
+    void Start()
     {
-        while (true)
-        {
-            // Esperar el intervalo de tiempo
-            yield return new WaitForSeconds(delay);
 
-            // Verificar si se detectó un plano
-            if (planeDetected)
-            {
+    }
+
+    private IEnumerator Instance(float time) //Instanciar
+    {
+        while (planeDetected) //mientras se detecte el plano sea true
+        {
                 // Instanciar el objeto en la posición del plano
                 GameObject nuevoObjeto = Instantiate(prefabObj, planePosition, Quaternion.identity);
-
                 // Opcional: Hacer que el objeto sea hijo de un objeto vacío para organizar la jerarquía
-                // nuevoObjeto.transform.SetParent(transform);
-            }
+                nuevoObjeto.transform.SetParent(transform);
+
+                yield return new WaitForSeconds(time); // Esperar el tiempo especificado
         }
     }
 
-    // Método para actualizar la posición del plano cuando se detecta (ej. desde Raycast o input)
+
+        
+    void Update() 
+    {
+        PlaneDetection();
+        // Iniciar cuando se detecte plano
+        if (planeDetected)
+        {
+            planeDetected = true;
+            StartCoroutine(Instance(delay));
+        }
+        else
+        {
+            //No detecta ningun plano
+            Debug.Log("No se detecta ningun plano");
+        }
+    }
+    void PlaneDetection()//Detectar Plano
+    {
+        Ray ray = new Ray(transform.position, Vector3.down);
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            if (hit.collider.CompareTag("XR Simulation"))
+            {
+                planeDetected = true;
+                //if (corutinaInstanciado == null)
+                //{
+                //    corutinaInstanciado = InstanciarPeriodicamente(intervaloSegundos);
+                //    StartCoroutine(corutinaInstanciado);
+                //}
+                UpdatePlane(hit.point);
+            }
+            else {
+                planeDetected = false;
+            }
+        }
+    }    
+    // Actualizar posición del plano cuando se detecta con el Raycast
     public void UpdatePlane(Vector3 newPos)
     {
         planePosition = newPos;
         planeDetected = true;
-    }
-
-    // Ejemplo de detección básica con Raycast (requiere un plano físico en la escena)
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0) && planeDetected)
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit))
-            {
-                // Si se hace clic en un objeto con tag "Plano"
-                if (hit.collider.CompareTag("Plano"))
-                {
-                    UpdatePlane(hit.point);
-                    // Opcional: Instanciar inmediatamente al hacer clic
-                    // GameObject nuevo = Instantiate(prefabObjeto, hit.point, Quaternion.identity);
-                }
-            }
-        }
     }
 }
