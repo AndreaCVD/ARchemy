@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
@@ -6,10 +7,21 @@ using UnityEngine.XR.ARSubsystems;
 public class DetectPlane : MonoBehaviour
 {
     [SerializeField] private ARPlaneManager planeManager;
+    //[SerializeField]  VRInstancer intanciar;
+    [SerializeField] GameObject prefabObj;
     //[SerializeField] private ARRaycastManager raycastManager;
     //[SerializeField] private GameObject prefabObj;
     private List<ARPlane> detectedPlanes = new List<ARPlane>();
+    public bool planeDetected;
 
+    void Update()
+    {
+        if(planeDetected)
+        {
+            InvokeRepeating("Instance()", 3.0f, 3.0f);
+        }
+
+    }
     //private List<XRRaycastHit> hits = new List<XRRaycastHit>();
     private void OnEnable()
     {
@@ -54,19 +66,27 @@ public class DetectPlane : MonoBehaviour
         foreach (var plane in args.added)
         {
             detectedPlanes.Add(plane);
+            planeDetected = true;
             // Debug.Log("Plano detectado:" + plane.planeId+" en posición"+ plane.center);
             Debug.Log("Plano detectado:" + plane);
-        }
-
-        foreach (var plane in args.updated)
-        {
-            // Actualizar datos del plano si es necesario
         }
 
         foreach (var plane in args.removed)
         {
             detectedPlanes.Remove(plane);
+            planeDetected = false;
+            //intanciar.StopInstance();
             Debug.Log("Plano eliminado:" + plane);
         }
+    }
+
+    void Instance() //Instanciar
+    {
+        Debug.Log("Instancias seta");
+
+        // Instanciar el objeto en la posición del plano
+        //GameObject nuevoObjeto = Instantiate(prefabObj, planePosition, Quaternion.identity);
+        // Opcional: Hacer que el objeto sea hijo de un objeto vacío para organizar la jerarquía
+        //nuevoObjeto.transform.SetParent(transform);
     }
 }
