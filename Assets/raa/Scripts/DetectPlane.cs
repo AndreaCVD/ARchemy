@@ -1,14 +1,17 @@
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using Random = UnityEngine.Random;
 
 public class DetectPlane : MonoBehaviour
 {
     [SerializeField] private ARPlaneManager planeManager;
     //[SerializeField]  VRInstancer intanciar;
-    [SerializeField] GameObject prefabObj;
+    //[SerializeField] GameObject prefabObj;
+    public List<GameObject> TiposSetas = new List<GameObject>();
     [SerializeField] GameObject padre;
     //[SerializeField] private ARRaycastManager raycastManager;
     //[SerializeField] private GameObject prefabObj;
@@ -118,14 +121,17 @@ public class DetectPlane : MonoBehaviour
         // Ejecutar el raycast con una distancia máxima (ej. 100 unidades)
         Physics.Raycast(ray, out hitInfo, Mathf.Infinity);
         Debug.DrawLine(ray.origin, hitInfo.point, Color.red);
-        Instantiate(prefabObj, hitInfo.point, Quaternion.identity, padre.transform);
+        Instantiate(TiposSetas[Random.Range(0, 2)], hitInfo.point, Quaternion.identity, padre.transform);
+        Debug.Log("ROTATION" + hitInfo.normal);
+        Debug.Log("NAME" + hitInfo.transform.gameObject.name);
+
         //Debug.Log(hitInfo.point);
         if (hitInfo.transform.gameObject.layer == 30) //30 es XR Simulation
         {
- 
 
+            
             Debug.Log("Instancias seta");
-            ListaMushrooms.Add(prefabObj);
+            //ListaMushrooms.Add(prefabObj);
             
         }
 
