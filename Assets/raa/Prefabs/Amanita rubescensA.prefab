@@ -68,6 +68,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Amanita rubescensA
       objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 67d24cabfaa388f49a2340693e2ad91c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 67d24cabfaa388f49a2340693e2ad91c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 67d24cabfaa388f49a2340693e2ad91c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 67d24cabfaa388f49a2340693e2ad91c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 67d24cabfaa388f49a2340693e2ad91c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: 67d24cabfaa388f49a2340693e2ad91c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
