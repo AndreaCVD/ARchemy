@@ -42,7 +42,7 @@ public class DetectPlane : MonoBehaviour
             InvokeRepeating(nameof(Instance), 2.0f, delay);
             //StartCoroutine(Instance(delay));
             Debug.Log("Corotina Empezada: " + detectedPlanes[0]);
-
+             
         }
         else {
             //coroutineStart= false; --> NO HACER ESTO, PETA
@@ -114,9 +114,21 @@ public class DetectPlane : MonoBehaviour
 
     void Instance() //Instanciar
     {
-        Debug.Log("Instancias seta");
-        ListaMushrooms.Add(prefabObj);
-        Instantiate(prefabObj, cameraView.transform.position, Quaternion.identity, padre.transform);
+        //Ejecutar Raycast
+        // Ejecutar el raycast con una distancia máxima (ej. 100 unidades)
+        Physics.Raycast(ray, out hitInfo, Mathf.Infinity);
+        Debug.DrawLine(ray.origin, hitInfo.point, Color.red);
+        Instantiate(prefabObj, hitInfo.point, Quaternion.identity, padre.transform);
+        //Debug.Log(hitInfo.point);
+        if (hitInfo.transform.gameObject.layer == 30) //30 es XR Simulation
+        {
+ 
+
+            Debug.Log("Instancias seta");
+            ListaMushrooms.Add(prefabObj);
+            
+        }
+
 
         // Instanciar el objeto en la posición del plano
         //GameObject nuevoObjeto = Instantiate(prefabObj, planePosition, Quaternion.identity);
