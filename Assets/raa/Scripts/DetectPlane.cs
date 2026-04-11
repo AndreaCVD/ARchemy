@@ -125,18 +125,15 @@ public class DetectPlane : MonoBehaviour
         if (hitInfo.normal == new Vector3(1, 0, 0)) //Pared
         {
             //TiposSetas seta = TiposSetas[Random.Range(0, TiposSetas.Count)];
-            Instantiate(TiposSetas[Random.Range(0, TiposSetas.Count)], hitInfo.point, Quaternion.Euler(90f, 0f, -90f), padre.transform);
-
+            GameObject newseta = Instantiate(TiposSetas[Random.Range(0, TiposSetas.Count)], hitInfo.point, Quaternion.Euler(90f, 0f, -90f), padre.transform);
+            ListaMushrooms.Add(newseta);
         }
-        if (hitInfo.normal == new Vector3(0, 1, 0)) //Suelo
+        else if (hitInfo.normal == new Vector3(0, 1, 0)) //Suelo
         {
-            Instantiate(TiposSetas[Random.Range(0, TiposSetas.Count)], hitInfo.point, Quaternion.Euler(0f, 90f, 0f), padre.transform);
-
+            GameObject newseta = Instantiate(TiposSetas[Random.Range(0, TiposSetas.Count)], hitInfo.point, Quaternion.Euler(0f, 90f, 0f), padre.transform);
+            ListaMushrooms.Add(newseta);
         }
-        //Instantiate(TiposSetas[Random.Range(0, 3)], hitInfo.point, Quaternion.Euler(hitInfo.normal*90), padre.transform);
 
-        //Saber nombre de que objeto encontramos
-        //Debug.Log("NAME" + hitInfo.transform.gameObject.name);
 
         if (hitInfo.transform.gameObject.layer == 30) //30 es XR Simulation
         {
