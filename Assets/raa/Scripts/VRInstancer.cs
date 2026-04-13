@@ -5,7 +5,7 @@ using UnityEngine;
 public class VRInstancer : MonoBehaviour
 {
     [SerializeField] GameObject prefabObj;
-    [SerializeField] float delay = 2.0f; // Segundos entre instancias
+    //[SerializeField] float delay = 2.0f; // Segundos entre instancias
     //[SerializeField] DetectPlane isPlane; //Si detecta plano o no
     private Vector3 planePosition; //Como esta el plano
     //bool planeDetected;
