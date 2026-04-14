@@ -1,7 +1,0 @@
-<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/raa/UI/scripts/buttons.uss?fileID=7433441132597879392&amp;guid=c8f557cededede646a94220d5c5474d8&amp;type=3#buttons" />
-    <ui:VisualElement style="flex-grow: 1; flex-wrap: wrap; flex-direction: row-reverse;">
-        <ui:Button name="recetas_button" class="unity-button" style="height: 64px; width: 66px; background-color: rgba(55, 55, 55, 0); background-image: url(&quot;project://database/Assets/raa/UI/main/main-recetas.png?fileID=2800000&amp;guid=51c737cd090b8374dbafab185b49dce6&amp;type=3#main-recetas&quot;); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
-        <ui:Button name="ingredientes_button" style="height: 64px; width: 66px; background-image: url(&quot;project://database/Assets/raa/UI/main/main-ingredientes.png?fileID=2800000&amp;guid=ca0140cb6e7de5943a5e59dd914e6746&amp;type=3#main-ingredientes&quot;); background-color: rgba(188, 188, 188, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
-    </ui:VisualElement>
-</ui:UXML>
