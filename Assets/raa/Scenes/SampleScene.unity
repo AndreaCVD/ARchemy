@@ -4627,6 +4627,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1141025503}
   - component: {fileID: 1141025504}
+  - component: {fileID: 1141025505}
   m_Layer: 0
   m_Name: --WorldManagement--
   m_TagString: Untagged
@@ -4675,6 +4676,19 @@ MonoBehaviour:
   time: 0
   timeMax: 10
   cameraView: {fileID: 1807233997}
+--- !u!114 &1141025505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141025501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef59cfd31ba5174aa684ebfeb46a7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Inventario: []
 --- !u!1 &1154765690
 GameObject:
   m_ObjectHideFlags: 0
