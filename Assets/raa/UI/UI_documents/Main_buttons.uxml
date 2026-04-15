@@ -1,0 +1,18 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/raa/UI/styles/styles.uss?fileID=7433441132597879392&amp;guid=c8f557cededede646a94220d5c5474d8&amp;type=3#styles" />
+    <ui:VisualElement style="flex-grow: 1; flex-wrap: wrap; flex-direction: column; bottom: auto; left: auto; align-content: flex-end; align-items: center; justify-content: space-evenly; align-self: center; height: 100%; position: relative; right: auto; width: 100%;">
+        <ui:VisualElement style="flex-grow: 1; width: 100%; align-self: flex-end; align-content: stretch; justify-content: flex-end; align-items: flex-end; flex-wrap: wrap; display: flex; flex-direction: row;">
+            <ui:ScrollView name="inventory" mode="Horizontal" horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="Hidden" touch-scroll-type="Elastic" usage-hints="DynamicTransform" style="width: initial; height: 30%; align-self: flex-end; align-items: center; justify-content: flex-start; margin-bottom: 10px; flex-shrink: 0; flex-direction: column; overflow: hidden; display: none;">
+                <ui:VisualElement name="item" class="item" style="flex-grow: 1; margin-left: 10px; margin-right: 10px;">
+                    <ui:VisualElement name="item" style="flex-grow: 1;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="item" style="flex-grow: 1;" />
+                <ui:VisualElement name="item" style="flex-grow: 1;" />
+            </ui:ScrollView>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 0; width: 100%; bottom: auto; align-content: auto; right: auto; left: auto; justify-content: space-between; align-items: flex-end; align-self: auto; flex-wrap: wrap; flex-direction: row-reverse; height: auto;">
+            <ui:Button name="recetas_button" class="unity-button" style="height: 60px; width: 60px; background-color: rgba(55, 55, 55, 0); background-image: url(&quot;project://database/Assets/raa/UI/main/main-recetas.png?fileID=2800000&amp;guid=51c737cd090b8374dbafab185b49dce6&amp;type=3#main-recetas&quot;); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; left: 0; bottom: 0;" />
+            <ui:Button name="ingredientes_button" style="height: 60px; width: 60px; background-image: url(&quot;project://database/Assets/raa/UI/main/main-ingredientes.png?fileID=2800000&amp;guid=ca0140cb6e7de5943a5e59dd914e6746&amp;type=3#main-ingredientes&quot;); background-color: rgba(188, 188, 188, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
