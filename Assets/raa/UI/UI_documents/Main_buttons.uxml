@@ -15,7 +15,7 @@
                 <ui:VisualElement class="button-top" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/raa/UI/main/ingredientes_icon.png?fileID=2800000&amp;guid=0a13dc882c6bf7344a8ca29ddd3bca07&amp;type=3#ingredientes_icon&quot;); background-size: 80% 80%; background-color: rgb(112, 174, 212);" />
             </ui:Button>
             <ui:Button name="recetas_button" class="unity-button main_buttons" style="height: 60px; width: 60px; background-color: rgba(55, 55, 55, 0); background-image: none; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; left: 0; bottom: 0;">
-                <ui:VisualElement style="flex-grow: 1; background-color: rgb(112, 212, 142);" />
+                <ui:VisualElement style="flex-grow: 1; background-color: rgb(112, 212, 142); background-image: url(&quot;project://database/Assets/raa/UI/main/recetas_icon.png?fileID=2800000&amp;guid=c62c24a22f8999349b723ab18d57a89a&amp;type=3#recetas_icon&quot;); background-size: 80% 80%;" />
             </ui:Button>
         </ui:VisualElement>
     </ui:VisualElement>
