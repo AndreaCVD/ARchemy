@@ -20,10 +20,10 @@ public class RecojerSetas : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0)) //Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began
+        if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began) //Input.GetMouseButtonDown(0)
         {
-            //Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+            //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit Hit;
             if (Physics.Raycast(ray, out Hit))
             {
