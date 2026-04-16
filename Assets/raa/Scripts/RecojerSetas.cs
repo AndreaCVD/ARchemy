@@ -22,7 +22,7 @@ public class RecojerSetas : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            //Creamos un rayo desde la posición del toque
+            //Creamos un rayo desde la posiciÃ³n del toque
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit Hit;
 
