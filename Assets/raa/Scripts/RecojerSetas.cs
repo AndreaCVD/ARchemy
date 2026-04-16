@@ -13,11 +13,17 @@ public class RecojerSetas : MonoBehaviour
     public List<GameObject> Inventario = new List<GameObject>();
     string setas;
 
+    [SerializeField] GameObject setaLeccinum;
+    [SerializeField] GameObject setaAmarita;
+    [SerializeField] GameObject setaBiporus;
+    [SerializeField] GameObject setaMusmire;
+
     private void Update()
     {
-        if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
+        if (Input.GetMouseButtonDown(0)) //Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+            //Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit Hit;
             if (Physics.Raycast(ray, out Hit))
             {
@@ -25,19 +31,21 @@ public class RecojerSetas : MonoBehaviour
                 switch (setas) //switch que busca las diferentes setas
                 {
                     case "Leccinum":
-                        //action --> añadirlo en la lista inventario
+                        //añadirlo en la lista inventario
+                        Inventario.Add(setaLeccinum);
+                        //pop-up de info?
                         Debug.Log("le has dado a Orange Bolet");
                         break;
                     case "Amanita rubescensA":
-                        //action
+                        Inventario.Add(setaAmarita);
                         Debug.Log("le has dado a una Blusher");
                         break;
                     case "Biporus_a":
-                        //action
+                        Inventario.Add(setaBiporus);
                         Debug.Log("le has dado a un champiñón");
                         break;
                     case "Musmire":
-                        //action
+                        Inventario.Add(setaMusmire);
                         Debug.Log("le has dado a la roja");
                         break;
                     default:
