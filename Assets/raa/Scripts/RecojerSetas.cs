@@ -8,67 +8,52 @@ using Random = UnityEngine.Random;
 
 public class RecojerSetas : MonoBehaviour
 {
-    public event Action<GameObject> objectSpawned;
 
-    public List<GameObject> Inventario = new List<GameObject>();
-    string setas;
+    public List<string> Inventario = new List<string>();
 
-    [SerializeField] GameObject setaLeccinum;
-    [SerializeField] GameObject setaAmarita;
-    [SerializeField] GameObject setaBiporus;
-    [SerializeField] GameObject setaMusmire;
+    Vector3 tipoEntrada = Vector3.zero;
+
+
 
     private void Update()
     {
-        if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began) //Input.GetMouseButtonDown(0)
+
+        //if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+
+        if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-            //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            //Creamos un rayo desde la posiciÃ³n del toque
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit Hit;
-            if (Physics.Raycast(ray, out Hit))
+
+            Debug.DrawRay(ray.origin, ray.direction * 50f, Color.red, 3f);
+
+            int capaSetas = LayerMask.GetMask("seta");
+
+            if (Physics.Raycast(ray, out Hit, capaSetas))
             {
-                setas = Hit.transform.name;
-                switch (setas) //switch que busca las diferentes setas
+
+                //obtener el objeto que tenia el collider
+
+                GameObject setaTocada = Hit.transform.gameObject;
+
+                string name = setaTocada.name;
+
+                if (name.Contains("Leccinum") || name.Contains("Amanita") || name.Contains("Biporus_a") || name.Contains("Musmire") )
                 {
-                    case "Leccinum":
-                        //añadirlo en la lista inventario
-                        Inventario.Add(setaLeccinum);
-                        //pop-up de info?
-                        Debug.Log("le has dado a Orange Bolet");
-                        break;
-                    case "Amanita rubescensA":
-                        Inventario.Add(setaAmarita);
-                        Debug.Log("le has dado a una Blusher");
-                        break;
-                    case "Biporus_a":
-                        Inventario.Add(setaBiporus);
-                        Debug.Log("le has dado a un champiñón");
-                        break;
-                    case "Musmire":
-                        Inventario.Add(setaMusmire);
-                        Debug.Log("le has dado a la roja");
-                        break;
-                    default:
-                        break;
+                    pickSeta(setaTocada);
                 }
+                
             }
+
         }
     }
 
-    public void DestroyandKeep(GameObject newSeta)
+    void pickSeta(GameObject seta)
     {
-        AddMushroom(newSeta);
-        Debug.Log(newSeta.name);
-    }
-    private void AddMushroom(GameObject newSeta)
-    {
-        //objectSpawned.
-        Inventario.Add(newSeta);
+        Debug.Log("Has recogido: " + seta.name);
+
+        Destroy(seta);
     }
 
-
-    private void NameDestroy()
-    {
-        
-    }
 }
