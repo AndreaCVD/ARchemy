@@ -20,13 +20,13 @@ public class RecojerSetas : MonoBehaviour
 
         //if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
-            //Creamos un rayo desde la posiciÃ³n del toque
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            //Creamos un rayo desde la posición del toque
+            Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
             RaycastHit Hit;
 
-            Debug.DrawRay(ray.origin, ray.direction * 50f, Color.red, 3f);
+            //Debug.DrawRay(ray.origin, ray.direction * 50f, Color.red, 3f);
 
             int capaSetas = LayerMask.GetMask("seta");
 
@@ -39,11 +39,11 @@ public class RecojerSetas : MonoBehaviour
 
                 string name = setaTocada.name;
 
-                if (name.Contains("Leccinum") || name.Contains("Amanita") || name.Contains("Biporus_a") || name.Contains("Musmire") )
+                if (name.Contains("Leccinum") || name.Contains("Amanita") || name.Contains("Biporus_a") || name.Contains("Musmire"))
                 {
                     pickSeta(setaTocada);
                 }
-                
+
             }
 
         }
@@ -52,6 +52,8 @@ public class RecojerSetas : MonoBehaviour
     void pickSeta(GameObject seta)
     {
         Debug.Log("Has recogido: " + seta.name);
+
+        Inventario.Add(seta.name);
 
         Destroy(seta);
     }
