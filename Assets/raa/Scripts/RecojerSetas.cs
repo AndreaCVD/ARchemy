@@ -10,10 +10,7 @@ using UnityEditor;
 
 public class RecojerSetas : MonoBehaviour
 {
-
-    //public List<string> Inventario = new List<string>();
-
-    [SerializeField] List<string[]> InventarioPrueva = new List<string[]>();
+    [SerializeField] List<string[]> Inventary = new List<string[]>();
     //Leccinum  [0][x]
     //Amanita   [1][x]
     //Biporus   [2][x]
@@ -33,10 +30,10 @@ public class RecojerSetas : MonoBehaviour
 
     void Start()
     {
-        InventarioPrueva.Add(leccinum);
-        InventarioPrueva.Add(amanita);
-        InventarioPrueva.Add(biporus);
-        InventarioPrueva.Add(musmire);
+        Inventary.Add(leccinum);
+        Inventary.Add(amanita);
+        Inventary.Add(biporus);
+        Inventary.Add(musmire);
 
         leccinum_lenght = 0;
         amanita_lenght = 0;
@@ -82,44 +79,44 @@ public class RecojerSetas : MonoBehaviour
         if  (seta.name.Contains("Leccinum")) 
         {
             int i = leccinum_lenght;
-            string[] nuevoArray = new string[i+1];
+            string[] newArray = new string[i+1];
             //spurce array, int sourceIndex, destination array, int destination index, lenght
-            System.Array.Copy(leccinum, nuevoArray, i);
-            nuevoArray[i] = seta.name;
-            leccinum = nuevoArray;
+            System.Array.Copy(leccinum, newArray, i);
+            newArray[i] = seta.name;
+            leccinum = newArray;
 
             leccinum_lenght++;
         }
         else if (seta.name.Contains("Amanita"))
         {
             int i = amanita_lenght;
-            string[] nuevoArray = new string[i + 1];
+            string[] newArray = new string[i + 1];
             //spurce array, int sourceIndex, destination array, int destination index, lenght
-            System.Array.Copy(amanita, nuevoArray, i);
-            nuevoArray[i] = seta.name;
-            amanita = nuevoArray;
+            System.Array.Copy(amanita, newArray, i);
+            newArray[i] = seta.name;
+            amanita = newArray;
 
             amanita_lenght++;
         }
         else if (seta.name.Contains("Biporus_a"))
         {
             int i = biporus_lenght;
-            string[] nuevoArray = new string[i + 1];
+            string[] newArray = new string[i + 1];
             //spurce array, int sourceIndex, destination array, int destination index, lenght
-            System.Array.Copy(biporus, nuevoArray, i);
-            nuevoArray[i] = seta.name;
-            biporus = nuevoArray;
+            System.Array.Copy(biporus, newArray, i);
+            newArray[i] = seta.name;
+            biporus = newArray;
 
             biporus_lenght++;
         }
         else if (seta.name.Contains("Musmire"))
         {
             int i = musmire_lenght;
-            string[] nuevoArray = new string[i + 1];
+            string[] newArray = new string[i + 1];
             //spurce array, int sourceIndex, destination array, int destination index, lenght
-            System.Array.Copy(musmire, nuevoArray, i);
-            nuevoArray[i] = seta.name;
-            musmire = nuevoArray;
+            System.Array.Copy(musmire, newArray, i);
+            newArray[i] = seta.name;
+            musmire = newArray;
 
             musmire_lenght++;
         }
