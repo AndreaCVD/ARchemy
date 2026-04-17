@@ -49,7 +49,7 @@ Con las setas recolectadas, y guardadas en el inventorio, podrás crear pociones
 
 **--> Como jugar**
 1.  **Explora:** muevete por el espacio para encontrar diferentes setas.
-2.  **Interact:** recoje las setas que encuentres, y aprende de ellas gracias a la información de tu inventario.
+2.  **Interactua:** recoje las setas que encuentres, y aprende de ellas gracias a la información de tu inventario.
 3.  **Crea pociones:** *(no disponible)* con los ingredientes recojidos, crea pociones siguiendo tu recetario.
 
 ---
