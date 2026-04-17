@@ -842,11 +842,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef59cfd31ba5174aa684ebfeb46a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Inventario: []
-  setaLeccinum: {fileID: 2060943655123829184, guid: 4cddd7fa2bad00f4794e8f4b903e640b, type: 3}
-  setaAmarita: {fileID: 8810596426608842985, guid: ef35b7e2d05748c44ad607802a9c71d5, type: 3}
-  setaBiporus: {fileID: 6004465954250178506, guid: ed58952db7988e9489d0ae68ccd88e4b, type: 3}
-  setaMusmire: {fileID: 306609119807670109, guid: 318dfc1348808d844838fba41f99183a, type: 3}
+  Inventario:
+  - 
+  - 
+  - 
+  - 
 --- !u!1 &1215314154
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,7 +863,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1215314155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -877,10 +877,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Inventario: []
-  setaLeccinum: {fileID: 0}
-  setaAmarita: {fileID: 0}
-  setaBiporus: {fileID: 0}
-  setaMusmire: {fileID: 0}
 --- !u!4 &1215314156
 Transform:
   m_ObjectHideFlags: 0
