@@ -32,3 +32,19 @@
 .main_buttons:active > VisualElement {
     translate: 0 0;
 }
+
+#unity-text-input{
+    background-color: #70AED4;
+    color: white;
+    border-radius: 100%;
+    border-color: #70AED4;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    padding: 1px;
+    text-align: center;
+    border: none;
+    align-self: center;
+}
+
+
