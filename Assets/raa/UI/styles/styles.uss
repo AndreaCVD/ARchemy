@@ -1,19 +1,19 @@
-#item {
+.inventory_cards {
     background-color: rgb(255, 255, 255);
-    width: 150px;
-    height: 150px;
-    flex-shrink: 0;
-    margin-left: 10px;
-    padding-right: 0;
-    margin-bottom: 0;
-    margin-top: 0;
-    margin-right: 10px;
+    width: 80px;
+    height: 95px;
+    border-radius: 12px;
+    margin-left: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .main_buttons {
     width: 60px;
     height: 60px;
-    background-color: rgba(0, 0, 0, 255);
+    background-color: rgb(0, 0, 0);
     border-radius: 12px;
     padding: 0;
 }
@@ -24,16 +24,11 @@
     border-width: 2px;
     border-color: rgb(0, 0, 0);
     border-radius: 12px;
-    
-    /* TRUCO: El valor negativo lo mueve hacia ARRIBA */
-    /* Así la sombra negra queda visible por ABAJO */
-    translate: 0 -2px; 
-    
+    translate: 0 -2px;
     transition-property: translate;
     transition-duration: 0.1s;
 }
 
-/* Al hacer clic, baja hasta tapar la base negra */
 .main_buttons:active > VisualElement {
     translate: 0 0;
 }
