@@ -457,7 +457,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef59cfd31ba5174aa684ebfeb46a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Inventario: []
+  leccinum: []
+  amanita: []
+  biporus: []
+  musmire: []
 --- !u!1 &1323550131
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,7 +679,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef59cfd31ba5174aa684ebfeb46a7e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Inventario: []
+  leccinum: []
+  amanita: []
+  biporus: []
+  musmire: []
 --- !u!1 &2013671783
 GameObject:
   m_ObjectHideFlags: 0
