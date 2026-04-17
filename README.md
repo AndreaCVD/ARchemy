@@ -1,12 +1,12 @@
 # ARchemy: recolecta setas y crea pociones desde donde quieras
 
-**ARchemy** es un prototipo de Realidad Aumentada desarrollada con Unity y AR Foundation. Con él, podras transformar cualquier espacio en un bosque, y recoletar setas y crear pociones con ellas.
+**ARchemy** és un prototipo de Realidad Aumentada desarrollada con Unity y AR Foundation. Con él, podras transformar cualquier espacio en un bosque, y recoletar setas y crear pociones con ellas.
 ---
 
 ## Funciones
 
 ###  1. ¡Busca setas! 🍄
-The app scans your physical room (floors, tables, shelves) to "grow" different species of magical mushrooms and plants. Using **AR Plane Detection**, every session is unique to your environment.
+La aplicación escaneará el espacio en el que te encuentres gracias al  **AR Plane Detection**. ¡Investiga a tu alrededor y verás como van apareciendo setas en es espacio!
 
 ###  2. Recolecta las setas 🖐️
 Simplemente con un click, podras guardar la seta que elijas en tu inventorio. Podras acceder siempre que quieras al inventorio para aprender más de ellas y para usarlas posteriormente en la creación de pociones.
@@ -36,7 +36,7 @@ Con las setas recolectadas, y guardadas en el inventorio, podrás crear pociones
 * Android 11.0 (API level 30) o superior.
 * Tener Unity Hub instalado.
 
-### Installation
+### Instalación
 1.  Clona el repositorio:
     ```bash
     git clone https://github.com/AndreaCVD/ARchemy
