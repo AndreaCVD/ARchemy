@@ -21,10 +21,10 @@ public class RecojerSetas : MonoBehaviour
     public string[] biporus;
     public string[] musmire;
 
-    private int leccinum_lenght;
-    private int amanita_lenght;
-    private int biporus_lenght ;
-    private int musmire_lenght;
+    public int leccinum_lenght;
+    public int amanita_lenght;
+    public int biporus_lenght ;
+    public int musmire_lenght;
 
     Vector3 tipoEntrada = Vector3.zero;
 

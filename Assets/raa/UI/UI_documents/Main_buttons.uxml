@@ -1,14 +1,15 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/raa/UI/styles/styles.uss?fileID=7433441132597879392&amp;guid=c8f557cededede646a94220d5c5474d8&amp;type=3" />
+    <Style src="project://database/Assets/raa/UI/styles/styles.uss?fileID=7433441132597879392&amp;guid=c8f557cededede646a94220d5c5474d8&amp;type=3#styles" />
     <ui:VisualElement style="flex-grow: 1; flex-wrap: wrap; flex-direction: column; bottom: auto; left: auto; align-content: flex-end; align-items: center; justify-content: space-evenly; align-self: center; height: 100%; position: relative; right: auto; width: 100%;">
         <ui:VisualElement style="flex-grow: 1; width: 100%; align-self: flex-end; align-content: stretch; justify-content: flex-end; align-items: flex-end; flex-wrap: wrap; display: flex; flex-direction: row; background-image: none; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0;">
             <ui:VisualElement name="recetas" style="flex-grow: 1; width: 100%; height: 60%; align-items: center; align-self: center; display: none;">
                 <ui:VisualElement style="flex-grow: 1; width: 70%; height: 100%; background-image: url(&quot;project://database/Assets/raa/UI/main/recetas.png?fileID=2800000&amp;guid=e6544168a1a9ad744b43a5499ea2bcb1&amp;type=3#recetas&quot;); align-items: flex-end;" />
             </ui:VisualElement>
             <ui:ScrollView name="inventory" mode="Horizontal" horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="Hidden" touch-scroll-type="Elastic" usage-hints="DynamicTransform" style="width: initial; height: 100px; align-self: flex-end; align-items: center; justify-content: flex-start; margin-bottom: 0; flex-shrink: 1; flex-direction: row; overflow: hidden; display: none; margin-top: 0; margin-right: 0; margin-left: 0; flex-grow: 0;">
-                <ui:VisualElement name="blusher_card" class="inventory_cards" style="flex-grow: 0; margin-left: 10px; margin-right: 10px; margin-top: 0; margin-bottom: 0; flex-shrink: 0; background-color: rgb(0, 0, 0);">
-                    <ui:VisualElement name="item_card" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/raa/UI/recipies/ingredients/Blusher.png?fileID=2800000&amp;guid=7c24f93738eb63948a7513ed228d848c&amp;type=3#Blusher&quot;); margin-left: 2px; margin-top: 2px; margin-bottom: 2px; margin-right: 2px; -unity-text-align: upper-center; flex-direction: column; align-items: stretch; align-self: stretch; justify-content: flex-start;">
-                        <ui:VisualElement style="flex-grow: 1; align-items: flex-end; height: 20px; width: 100%;">
+                <ui:VisualElement name="blusher_card" class="inventory_cards" style="flex-grow: 0; margin-left: 10px; margin-right: 10px; margin-top: 0; margin-bottom: 0; flex-shrink: 0; background-color: rgb(0, 0, 0); display: flex;">
+                    <ui:VisualElement name="item_card" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/raa/UI/recipies/ingredients/Blusher.png?fileID=2800000&amp;guid=7c24f93738eb63948a7513ed228d848c&amp;type=3#Blusher&quot;); margin-left: 2px; margin-top: 2px; margin-bottom: 2px; margin-right: 2px; -unity-text-align: upper-center; flex-direction: column; align-items: stretch; align-self: stretch; justify-content: flex-start; display: flex;">
+                        <ui:VisualElement style="flex-grow: 1; align-items: flex-end; height: 20px; width: 100%; display: flex;">
+                            <ui:IntegerField value="40" name="num_amanita" />
                             <ui:Label text="0" name="item_num" style="color: rgb(255, 255, 255); -unity-text-align: upper-right; width: 40px; height: 20px; padding-bottom: 0; margin-bottom: 0; padding-left: 0; margin-left: 0;" />
                         </ui:VisualElement>
                         <ui:VisualElement style="flex-grow: 1; align-items: flex-start; background-image: none; background-size: 40px 20px;">
@@ -19,6 +20,7 @@
                 <ui:VisualElement name="amanita_card" class="inventory_cards" style="flex-grow: 0; margin-left: 10px; margin-right: 10px; margin-top: 0; margin-bottom: 0; flex-shrink: 0; background-color: rgb(0, 0, 0);">
                     <ui:VisualElement name="item_card" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/raa/UI/recipies/ingredients/fly-agaric.png?fileID=2800000&amp;guid=9848823496cc3044f960e2ca802c4add&amp;type=3#fly-agaric&quot;); margin-left: 2px; margin-top: 2px; margin-bottom: 2px; margin-right: 2px; -unity-text-align: upper-center; flex-direction: column; align-items: flex-end;">
                         <ui:VisualElement style="flex-grow: 1; align-items: flex-end; height: 20px; width: 100%;">
+                            <ui:IntegerField value="40" name="num_musmire" />
                             <ui:Label text="0" name="item_num" style="color: rgb(255, 255, 255); -unity-text-align: upper-right; width: 40px; height: 20px; padding-bottom: 0; margin-bottom: 0; padding-left: 0; margin-left: 0;" />
                         </ui:VisualElement>
                         <ui:VisualElement style="flex-grow: 1; align-items: flex-start; background-image: none; background-size: 40px 20px; width: 100%;">
@@ -29,6 +31,7 @@
                 <ui:VisualElement name="leccinum_card" class="inventory_cards" style="flex-grow: 0; margin-left: 10px; margin-right: 10px; margin-top: 0; margin-bottom: 0; flex-shrink: 0; background-color: rgb(0, 0, 0); display: flex;">
                     <ui:VisualElement name="item_card" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/raa/UI/recipies/ingredients/Orange-bolete.png?fileID=2800000&amp;guid=d4983fe4dd7f46d4fb584cbf71d80780&amp;type=3#Orange-bolete&quot;); margin-left: 2px; margin-top: 2px; margin-bottom: 2px; margin-right: 2px; -unity-text-align: upper-center; flex-direction: column; align-items: flex-end;">
                         <ui:VisualElement style="flex-grow: 1; align-items: flex-end; height: 20px; width: 100%;">
+                            <ui:IntegerField value="40" name="num_leccinum" />
                             <ui:Label text="0" name="item_num" style="color: rgb(255, 255, 255); -unity-text-align: upper-right; width: 40px; height: 20px; padding-bottom: 0; margin-bottom: 0; padding-left: 0; margin-left: 0;" />
                         </ui:VisualElement>
                         <ui:VisualElement style="flex-grow: 1; align-items: flex-start; background-image: none; background-size: 40px 20px; width: 100%;">
@@ -39,6 +42,7 @@
                 <ui:VisualElement name="biporus_card" class="inventory_cards" style="flex-grow: 0; margin-left: 10px; margin-right: 10px; margin-top: 0; margin-bottom: 0; flex-shrink: 0; background-color: rgb(0, 0, 0);">
                     <ui:VisualElement name="item_card" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/raa/UI/recipies/ingredients/Champinon.png?fileID=2800000&amp;guid=8ff9ebac36a296b468432d32a3629209&amp;type=3#Champinon&quot;); margin-left: 2px; margin-top: 2px; margin-bottom: 2px; margin-right: 2px; -unity-text-align: upper-center; flex-direction: column; align-items: flex-end;">
                         <ui:VisualElement style="flex-grow: 1; align-items: flex-end; height: 20px; width: 100%;">
+                            <ui:IntegerField value="40" name="num_biporus" />
                             <ui:Label text="0" name="item_num" style="color: rgb(255, 255, 255); -unity-text-align: upper-right; width: 40px; height: 20px; padding-bottom: 0; margin-bottom: 0; padding-left: 0; margin-left: 0;" />
                         </ui:VisualElement>
                         <ui:VisualElement style="flex-grow: 1; align-items: flex-start; background-image: none; background-size: 40px 20px; width: 100%;">
@@ -70,7 +74,7 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 0; width: 100%; bottom: auto; align-content: auto; right: auto; left: auto; justify-content: space-between; align-items: flex-end; align-self: auto; flex-wrap: wrap; flex-direction: row; height: auto; margin-left: 0; margin-right: 0; padding-left: 5px; padding-right: 5px; padding-bottom: 5px; display: flex;">
-            <ui:Button name="ingredientes_button" class="buttons_ main_buttons" style="height: 60px; width: 60px; background-image: none; background-color: rgb(0, 0, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; align-items: center; align-content: center; flex-wrap: wrap; flex-direction: column; justify-content: center; align-self: center;">
+            <ui:Button name="ingredientes_button" class="buttons_ main_buttons" style="height: 60px; width: 60px; background-image: none; background-color: rgb(0, 0, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; align-items: center; align-content: center; flex-wrap: wrap; flex-direction: column; justify-content: center; align-self: center; display: flex;">
                 <ui:VisualElement class="button-top" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/raa/UI/main/ingredientes_icon.png?fileID=2800000&amp;guid=0a13dc882c6bf7344a8ca29ddd3bca07&amp;type=3#ingredientes_icon&quot;); background-size: 80% 80%; background-color: rgb(112, 174, 212); height: 100%;" />
             </ui:Button>
             <ui:Button name="recetas_button" class="unity-button main_buttons" style="height: 60px; width: 60px; background-color: rgb(0, 0, 0); background-image: none; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; left: 0; bottom: 0;">

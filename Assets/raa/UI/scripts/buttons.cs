@@ -1,19 +1,29 @@
+//using System.Reflection.Emit;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
+//using UnityEngine.UIElements.IntegerField;
+//using System.Reflection.Emit;
+//using EditorGUI.PropertyField;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
+
     [SerializeField] UIDocument uIDocument;
     private VisualElement root;
 
     // Elementos principales
     private VisualElement inventoryPanel, panelsParent, recetas_panel;
     private VisualElement ingredients, recetas, close_inventory, close_recetas, close_panels;
-
+    [SerializeField] IntegerField num_amanita, num_musmire, num_leccinum, num_biporus;
+    //public NumericField number_leccinum; // El numero de setas 
+    [SerializeField] RecojerSetas inventory;
+    
     void Start()
     {
         root = uIDocument.rootVisualElement;
-
+          
         // 1. Asignamos los contenedores y botones base
         inventoryPanel = root.Q<VisualElement>("inventory");
         panelsParent = root.Q<VisualElement>("panels");
@@ -34,7 +44,13 @@ public class NewMonoBehaviourScript : MonoBehaviour
         //abrir/cerrar recetas
         recetas.RegisterCallback<ClickEvent>(onClickRecetas);
         close_recetas.RegisterCallback<ClickEvent>(onClickCloseRecetas);
-
+        
+        //Buscar el numeric field
+        //num_leccinum = root.Q<VisualElement>("IntegerField");
+        num_amanita = root.Q<IntegerField>("num_amanita");
+        num_musmire = root.Q<IntegerField>("num_musmire");
+        num_leccinum = root.Q<IntegerField>("num_leccinum");
+        num_biporus = root.Q<IntegerField>("num_biporus");
 
         //buscar elementos que tengan _info
         root.Query<VisualElement>().ForEach(boton =>
@@ -50,8 +66,30 @@ public class NewMonoBehaviourScript : MonoBehaviour
         {
             btnSalir.RegisterCallback<ClickEvent>(onClickRegresarAlInventario);
         });
-    }
 
+
+    }
+    void Update()
+    {
+        //int a = inventory.num_Leccinum();
+        //Debug.Log("INVENTARIO = "+a);
+        ////string b =  num_leccinum.text;
+        ////Debug.Log(b);
+        num_amanita.value = inventory.amanita_lenght;
+        num_musmire.value = inventory.musmire_lenght;
+        num_leccinum.value = inventory.leccinum_lenght;
+        num_biporus.value = inventory.biporus_lenght;
+
+
+        //Debug.Log(num_leccinum.value);
+        //Debug.Log(inventory.leccinum_lenght);
+
+
+        //if (num_leccinum.text != a)
+        //{
+        //    num_leccinum.text = inventory.num_Leccinum();
+        //}
+    }
     // Una sola función para TODAS las setas
     private void onClickAbrirPanelInfo(ClickEvent evt)
     {
@@ -76,6 +114,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
 
         }
+
     }
     private void onClickRegresarAlInventario(ClickEvent evt)
     {
