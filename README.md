@@ -1,6 +1,6 @@
 # ARchemy: recolecta setas y crea pociones desde donde quieras
 
-**ARchemy** es un prototipo de Realidad Aumentada desarrollada con Unity y AR Foundation. Con él, podras transformar cualquier espacio en un bosque, y recoletar setas y crear pociones con ellas-
+**ARchemy** es un prototipo de Realidad Aumentada desarrollada con Unity y AR Foundation. Con él, podras transformar cualquier espacio en un bosque, y recoletar setas y crear pociones con ellas.
 ---
 
 ## Funciones
